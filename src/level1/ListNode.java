@@ -1,7 +1,8 @@
 package level1;
 
 public class ListNode {
-	      int val;
-	      ListNode next;
-	      ListNode(int x) { val = x; }
-	  }
+    int data;
+    ListNode next;
+    ListNode(int data) { this.data = data; }
+}
+

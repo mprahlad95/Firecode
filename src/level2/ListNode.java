@@ -1,7 +1,7 @@
 package level2;
 
 public class ListNode {
-	      int val;
+	      int data;
 	      ListNode next;
-	      ListNode(int x) { val = x; }
+	      ListNode(int data) { this.data = data; }
 	  }

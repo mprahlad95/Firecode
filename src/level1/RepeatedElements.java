@@ -18,7 +18,6 @@ public class RepeatedElements {
 					map.put(numbers[i], 1);
 			}
 			int res = 0;
-			int arr [] = new int[100];
 			for (Entry<Integer, Integer> entry : map.entrySet()) {
 				if (entry.getValue() > 1) {
 					res = entry.getKey();
