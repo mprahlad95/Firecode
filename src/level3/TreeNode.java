@@ -10,4 +10,8 @@ class TreeNode {
 		this.left = left;
 		this.right = right;
 	}
+	
+	TreeNode(int data) {
+		this.data = data;
+	}
 }
