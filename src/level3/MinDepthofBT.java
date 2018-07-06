@@ -1,4 +1,4 @@
-package level3;
+   package level3;
 
 public class MinDepthofBT {
 	public int minTreeDepth(TreeNode root) {

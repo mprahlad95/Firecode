@@ -2,7 +2,7 @@ package level3;
 
 import java.util.*;
 
-public class PrintNodesAtoB {
+public class PrintNodesAtoB_BST {
 	public ArrayList<Integer> rangeList = new ArrayList<Integer>();
 
 	public void printRange(TreeNode root, int a, int b) {
