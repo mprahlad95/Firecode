@@ -11,6 +11,7 @@ public class LongestNonRepeatingSubstring_bruteforce {
 			for (int end = start + 1; end <= len; end++) {
 				if (isUnique(input, start, end))
 					max = Math.max(max, end - start);
+				else break;
 			}
 		}
 		return max;
