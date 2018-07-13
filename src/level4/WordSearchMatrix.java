@@ -1,29 +1,34 @@
 package level4;
 
 public class WordSearchMatrix {
-	public boolean exist(char[][] board, String word) {
+	static boolean[][] visited;
+
+	public static boolean exist(char[][] board, String word) {
+		visited = new boolean[board.length][board[0].length];
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board[i].length; j++) {
-				if (exist(board, i, j, word, 0))
+				if ((word.charAt(0) == board[i][j]) && search(board, word, i, j, 0)) {
 					return true;
+				}
 			}
 		}
 		return false;
 	}
 
-	private boolean exist(char[][] board, int x, int y, String word, int start) {
-		if (start >= word.length())
+	private static boolean search(char[][] board, String word, int i, int j, int index) {
+		if (index == word.length()) {
 			return true;
-		if (x < 0 || x >= board.length || y < 0 || y >= board[0].length)
-			return false;
-		if (board[x][y] == word.charAt(start++)) {
-			char c = board[x][y];
-			board[x][y] = '#';
-			boolean res = exist(board, x + 1, y, word, start) || exist(board, x - 1, y, word, start)
-					|| exist(board, x, y + 1, word, start) || exist(board, x, y - 1, word, start);
-			board[x][y] = c;
-			return res;
 		}
+		if (i >= board.length || i < 0 || j >= board[i].length || j < 0 || board[i][j] != word.charAt(index)
+				|| visited[i][j]) {
+			return false;
+		}
+		visited[i][j] = true;
+		if (search(board, word, i - 1, j, index + 1) || search(board, word, i + 1, j, index + 1)
+				|| search(board, word, i, j - 1, index + 1) || search(board, word, i, j + 1, index + 1)) {
+			return true;
+		}
+		visited[i][j] = false;
 		return false;
 	}
 }
