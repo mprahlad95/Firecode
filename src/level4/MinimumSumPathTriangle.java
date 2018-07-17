@@ -2,6 +2,7 @@ package level4;
 
 import java.util.*;
 
+//Start from the bottom
 public class MinimumSumPathTriangle {
 	public static int minTriangleDepth(ArrayList<ArrayList<Integer>> input) {
 		if (input == null)
